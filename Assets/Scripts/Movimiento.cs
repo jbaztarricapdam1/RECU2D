@@ -5,23 +5,37 @@ using UnityEngine;
 public class Movimiento : MonoBehaviour
 {
     public float velocidadMovimiento = 5f;
+    public float fuerzaSalto = 10f;
+    public Transform puntoSuelo;
+    public LayerMask capaSuelo;
 
-    // Update is called once per frame
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+
+        // Verificar si se presiona la tecla de salto y el personaje está en el suelo.
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.Translate(Vector3.left * velocidadMovimiento * Time.deltaTime);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector3.right * velocidadMovimiento * Time.deltaTime);
+            Saltar();
         }
     }
 
-    void logicaMovimiento()
+    void FixedUpdate()
     {
-        float inputMovimiento = Input.GetAxis("Horizontal");
-        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+        float direccionMovimiento = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(direccionMovimiento * velocidadMovimiento, rb.velocity.y);
+    }
+
+    void Saltar()
+    {
+        // Aplicar una fuerza vertical al Rigidbody2D para realizar el salto.
+        rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        rb.gravityScale = 2f;
     }
 }

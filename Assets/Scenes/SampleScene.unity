@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 402909931}
   - component: {fileID: 402909930}
   m_Layer: 0
-  m_Name: Suelo_Mikel
+  m_Name: capaSuelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,8 +265,9 @@ GameObject:
   - component: {fileID: 509194508}
   - component: {fileID: 509194507}
   - component: {fileID: 509194506}
+  - component: {fileID: 509194510}
   m_Layer: 0
-  m_Name: idle_0
+  m_Name: jugador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,6 +412,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &509194510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509194505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e64b93f2d386d48a26bde224ed1c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadMovimiento: 5
+  fuerzaSalto: 10
+  puntoSuelo: {fileID: 402909932}
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
