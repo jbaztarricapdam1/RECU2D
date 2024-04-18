@@ -11,6 +11,9 @@ public class Movimiento : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public int contadorSaltos = 2;
+    public int topeSaltos = 2;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,13 +21,25 @@ public class Movimiento : MonoBehaviour
 
     void Update()
     {
-
         // Verificar si se presiona la tecla de salto y el personaje está en el suelo.
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && contadorSaltos > 0)
         {
             Saltar();
-        }
+            contadorSaltos--;
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.0f);
+            if (hit.collider != null)
+            {
+                // Si el personaje está en contacto con un objeto debajo de él, igualar el contador al tope de saltos.
+                contadorSaltos = topeSaltos;
+            }
+        } 
+
+        // Comprobar si el personaje está en contacto con un objeto debajo de él.
+        
+        
     }
+
 
     void FixedUpdate()
     {
