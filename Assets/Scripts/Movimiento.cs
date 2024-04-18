@@ -33,11 +33,10 @@ public class Movimiento : MonoBehaviour
                 // Si el personaje está en contacto con un objeto debajo de él, igualar el contador al tope de saltos.
                 contadorSaltos = topeSaltos;
             }
-        } 
+        }
 
-        // Comprobar si el personaje está en contacto con un objeto debajo de él.
-        
-        
+
+
     }
 
 
