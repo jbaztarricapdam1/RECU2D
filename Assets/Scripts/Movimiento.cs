@@ -9,12 +9,15 @@ public class Movimiento : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private Animator animator;
+
     public int contadorSaltos = 2;
     public int topeSaltos = 2;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -37,7 +40,11 @@ public class Movimiento : MonoBehaviour
     void FixedUpdate()
     {
         float direccionMovimiento = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(direccionMovimiento * velocidadMovimiento, rb.velocity.y);
+        if (direccionMovimiento != 0) {
+            rb.velocity = new Vector2(direccionMovimiento * velocidadMovimiento, rb.velocity.y);
+            animator.SetBool("running", true);
+        }
+        else animator.SetBool("running", false);
     }
 
     void Saltar()
