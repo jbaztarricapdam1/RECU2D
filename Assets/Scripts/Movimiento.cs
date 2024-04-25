@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movimiento : MonoBehaviour
@@ -34,11 +32,7 @@ public class Movimiento : MonoBehaviour
                 contadorSaltos = topeSaltos;
             }
         }
-
-
-
     }
-
 
     void FixedUpdate()
     {
@@ -50,6 +44,6 @@ public class Movimiento : MonoBehaviour
     {
         // Aplicar una fuerza vertical al Rigidbody2D para realizar el salto.
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
-        rb.gravityScale = 2f; 
+        rb.gravityScale = 2f;
     }
 }
