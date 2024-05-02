@@ -947,13 +947,13 @@ Transform:
   - {fileID: 822662696}
   - {fileID: 1105164802}
   - {fileID: 367171170}
-  - {fileID: 601315958}
   - {fileID: 1477770406}
   - {fileID: 860727932}
   - {fileID: 1864053521}
   - {fileID: 1850912075}
   - {fileID: 1818294853}
   - {fileID: 780033676}
+  - {fileID: 601315958}
   - {fileID: 290587487}
   - {fileID: 425949812}
   - {fileID: 2146936191}
@@ -3826,7 +3826,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1065737455
 Animator:
   serializedVersion: 5
